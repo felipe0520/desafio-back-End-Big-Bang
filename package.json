@@ -1,0 +1,33 @@
+{
+  "name": "desafio-back-end-big-bang",
+  "version": "1.0.0",
+  "description": "desafio do processo seletivo back end",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": " ts-node-dev ./src/index.ts",
+    "start": " tsc && node ./build/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipe0520/desafio-back-End-Big-Bang.git"
+  },
+  "author": "Felipe Ferraz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/felipe0520/desafio-back-End-Big-Bang/issues"
+  },
+  "homepage": "https://github.com/felipe0520/desafio-back-End-Big-Bang#readme",
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.6",
+    "@types/jest": "^26.0.0",
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jest": "^26.0.1",
+    "ts-node-dev": "^1.0.0-pre.49",
+    "typescript": "^3.9.5"
+  }
+}
