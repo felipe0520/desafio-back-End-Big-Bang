@@ -17,4 +17,4 @@ const server = app.listen(3000, () => {
   }
 });
 
-app.get("/city", new CityController().getCity);
+app.get("/city", new CityController().getMusics);

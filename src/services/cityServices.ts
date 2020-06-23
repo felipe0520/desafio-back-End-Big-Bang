@@ -18,7 +18,7 @@ export class CityDataService {
   }
 }
 
-type coordinatesType = {
+export type coordinatesType = {
   lat: number;
   lon: number;
 };

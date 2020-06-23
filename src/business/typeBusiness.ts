@@ -1,5 +1,5 @@
 export type CityType = {
-  lon: number;
-  lat: number;
-  city: string;
+  lon: number | undefined;
+  lat: number | undefined;
+  city: string | undefined;
 };
