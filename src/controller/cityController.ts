@@ -8,9 +8,9 @@ export class CityController {
       const lon = req.body.lon;
       const lat = req.body.lat;
 
-      const response = await new CityBusiness().getCity({ city, lon, lat });
+      const playlist = await new CityBusiness().getCity({ city, lon, lat });
 
-      res.status(200).send({ response });
+      res.status(200).send(playlist);
     } catch (error) {
       res.status(400).send({ messsage: error.message });
     }

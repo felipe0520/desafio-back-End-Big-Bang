@@ -1,6 +1,8 @@
 import express from "express";
 import { AddressInfo } from "net";
 import { CityController } from "./controller/cityController";
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 
