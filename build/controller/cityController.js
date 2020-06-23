@@ -18,8 +18,8 @@ class CityController {
                 const city = req.body.city;
                 const lon = req.body.lon;
                 const lat = req.body.lat;
-                const response = yield new businessController_1.CityBusiness().getCity({ city, lon, lat });
-                res.status(200).send({ response });
+                const playlist = yield new businessController_1.CityBusiness().getCity({ city, lon, lat });
+                res.status(200).send(playlist);
             }
             catch (error) {
                 res.status(400).send({ messsage: error.message });

@@ -7,6 +7,7 @@ exports.verifyCityData = (cityData) => {
     }
 };
 exports.verifyMusicToTemp = (tempKelvin) => {
+    debugger;
     const temp = Number((tempKelvin - 273).toFixed(1));
     if (temp > 30) {
         return "fest music";

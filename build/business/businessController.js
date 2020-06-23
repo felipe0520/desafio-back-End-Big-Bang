@@ -11,7 +11,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CityBusiness = void 0;
 const verifyBusiness_1 = require("./verifyBusiness");
-const cityDataBase_1 = require("../data/cityDataBase");
+const cityServices_1 = require("../services/cityServices");
+const spotifyServices_1 = require("../services/spotifyServices");
 class CityBusiness {
     getCity(cityData) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -19,13 +20,19 @@ class CityBusiness {
             const coordinates = { lat: cityData.lat, lon: cityData.lon };
             let tempKelvin;
             if (cityData.city) {
-                tempKelvin = yield new cityDataBase_1.CityDataBase().getCityName(cityData.city);
+                tempKelvin = yield new cityServices_1.CityDataService().getCityName(cityData.city);
             }
             if (coordinates.lat && coordinates.lon) {
-                tempKelvin = yield new cityDataBase_1.CityDataBase().getCityCoordinates(coordinates);
+                tempKelvin = yield new cityServices_1.CityDataService().getCityCoordinates(coordinates);
             }
-            const response = verifyBusiness_1.verifyMusicToTemp(tempKelvin);
-            return response;
+            const musicalGenre = verifyBusiness_1.verifyMusicToTemp(tempKelvin);
+            const spotifyDataServices = new spotifyServices_1.SpotifyServices();
+            yield spotifyDataServices.config();
+            const result = yield spotifyDataServices.getMusic(musicalGenre);
+            return {
+                Genre: musicalGenre,
+                music: result,
+            };
         });
     }
 }
