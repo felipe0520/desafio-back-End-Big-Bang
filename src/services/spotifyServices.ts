@@ -13,7 +13,7 @@ export class SpotifyServices {
     this.api.setAccessToken(credential.body.access_token);
   }
 
-  public async getMusic(name: string) {
+  public async getMusics(name: string) {
     const response = await this.api.searchTracks(`'playlist : ${name}'`);
     const data = response.body.tracks?.items;
 
