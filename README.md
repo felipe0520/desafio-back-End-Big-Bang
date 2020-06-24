@@ -26,4 +26,12 @@ Abaixo de 10 graus, segerir músicas clássicas.
 
 ![Screenshot](screenshot/postman1.png)
 
+![Screenshot](screenshot/postman2.png)
+
+![Screenshot](screenshot/postman3.png)
+
+![Screenshot](screenshot/postman4.png)
+
+![Screenshot](screenshot/postman5.png)
+
 
