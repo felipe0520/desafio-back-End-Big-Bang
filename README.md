@@ -3,13 +3,13 @@
 Projeto do desafio back end
 
 ### Principais tecnologias utilizadas
-*1 Node
-*2 Typescript
-*3 Arquitetura MVC
-*4 Express
-*5 Dotenv
-*6 Jest
-*7 spotify-web-api-node
+1. Node
+2. Typescript
+3. Arquitetura MVC
+4. Express
+5. Dotenv
+6. Jest
+7. spotify-web-api-node
 
 ### Escopo
 
