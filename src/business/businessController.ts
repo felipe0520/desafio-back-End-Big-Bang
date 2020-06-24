@@ -1,7 +1,7 @@
 import { CityType } from "./typeBusiness";
 import {
   verifyCityData,
-  verifyMusicToTemp,
+  verifyGenreToTemp,
   verifyPropertyIsEmpty,
   verifyPropertyIsNumber,
   verifyPropertyIsString,
@@ -34,7 +34,9 @@ export class CityBusiness {
 
     verifyPropertyIsNumber(tempKelvin);
 
-    const musicalGenre = verifyMusicToTemp(tempKelvin);
+    const musicalGenre = verifyGenreToTemp(tempKelvin);
+
+    verifyPropertyIsString(musicalGenre);
 
     const spotifyDataServices = new SpotifyServices();
 

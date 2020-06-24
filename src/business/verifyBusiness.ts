@@ -11,6 +11,7 @@ export const verifyPropertyIsEmpty = (property: any) => {
   if (!property) {
     throw new Error("Invalid Input");
   }
+  return true;
 };
 
 export const verifyPropertyIsNumber = (property: any) => {
@@ -22,12 +23,11 @@ export const verifyPropertyIsNumber = (property: any) => {
 
 export const verifyPropertyIsString = (property: any) => {
   if (typeof property !== "string") {
-    console.log("fui chamado");
-    throw new Error("Invalid Invalid input");
+    throw new Error("Invalid input");
   }
   return true;
 };
-export const verifyMusicToTemp = (tempKelvin: number) => {
+export const verifyGenreToTemp = (tempKelvin: number) => {
   const temp = Number((tempKelvin - 273).toFixed(1));
   if (temp > 30) {
     return "fest music";

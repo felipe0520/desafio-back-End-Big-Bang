@@ -19,14 +19,18 @@ class CityBusiness {
             verifyBusiness_1.verifyCityData(cityData);
             const coordinates = { lat: cityData.lat, lon: cityData.lon };
             let tempKelvin;
-            if (cityData.city) {
+            if (!coordinates.lat && !coordinates.lon) {
+                verifyBusiness_1.verifyPropertyIsString(cityData.city);
                 tempKelvin = yield new cityServices_1.CityDataService().getCityName(cityData.city);
             }
-            if (coordinates.lat && coordinates.lon) {
+            if (!tempKelvin) {
+                verifyBusiness_1.verifyPropertyIsNumber(coordinates.lat);
+                verifyBusiness_1.verifyPropertyIsNumber(coordinates.lon);
                 tempKelvin = yield new cityServices_1.CityDataService().getCityCoordinates(coordinates);
             }
-            verifyBusiness_1.verifyPropertyIsEmpty(tempKelvin);
-            const musicalGenre = verifyBusiness_1.verifyMusicToTemp(tempKelvin);
+            verifyBusiness_1.verifyPropertyIsNumber(tempKelvin);
+            const musicalGenre = verifyBusiness_1.verifyGenreToTemp(tempKelvin);
+            verifyBusiness_1.verifyPropertyIsString(musicalGenre);
             const spotifyDataServices = new spotifyServices_1.SpotifyServices();
             yield spotifyDataServices.config();
             const result = yield spotifyDataServices.getMusics(musicalGenre);

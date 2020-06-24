@@ -8,6 +8,7 @@ export class SpotifyServices {
       clientSecret: process.env.clientSecret,
     });
   }
+
   public async config() {
     const credential = await this.api.clientCredentialsGrant();
     this.api.setAccessToken(credential.body.access_token);
